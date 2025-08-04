@@ -32,9 +32,8 @@
         android:layout_height="wrap_content"
         android:text="@string/label_deadline"
         android:layout_below="@id/editTextTaskName"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
         android:labelFor="@id/linearLayoutDeadlineSpinners" />
 
     <LinearLayout

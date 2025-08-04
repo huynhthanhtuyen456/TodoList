@@ -80,7 +80,7 @@ class TaskDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, 
 
     fun getAllTasks(): List<Task> {
         val tasksList = mutableListOf<Task>()
-        val selectQuery = "SELECT * FROM $TABLE_TASKS ORDER BY $KEY_DEADLINE ASC"
+        val selectQuery = "SELECT * FROM $TABLE_TASKS ORDER BY $KEY_DEADLINE DESC"
         val db = this.readableDatabase
         val cursor = db.rawQuery(selectQuery, null)
 

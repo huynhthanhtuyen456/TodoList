@@ -17,27 +17,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Date
 import java.util.Locale
 
-// Data class for Task
-data class Task(
-    var id: Long? = null, // Nullable Long for SQLite auto-increment ID
-    val name: String,
-    val deadline: Date,
-    val duration: Int, // Number of days
-    val description: String,
-    var completed: Boolean = false // Default to not completed
-) {
-    // Override toString to display task name and status in the ListView
-    override fun toString(): String {
-        val status = if (completed) "[COMPLETED] " else ""
-        return status + name + " - Deadline: " + SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(deadline)
-    }
-}
-
 class MainActivity : AppCompatActivity() {
-
     private lateinit var editTextTaskName: EditText
     private lateinit var editTextTaskDuration: EditText
     private lateinit var editTextTaskDescription: EditText
@@ -136,7 +118,9 @@ class MainActivity : AppCompatActivity() {
         spinnerYear.adapter = yearAdapter
 
         val monthNameMap = SimpleDateFormat("MMMM", Locale.getDefault()).calendar.getDisplayNames(Calendar.MONTH, Calendar.LONG, Locale.getDefault())
-        val months = monthNameMap?.keys?.toTypedArray() ?: arrayOf<String>()
+        val sortedMonthNamesEntries = monthNameMap.entries.sortedBy { it.value }
+        val sortedMonthNameMap = sortedMonthNamesEntries.associate { it.key to it.value }
+        val months = sortedMonthNameMap?.keys?.toTypedArray() ?: arrayOf<String>()
         val monthAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, months)
         monthAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerMonth.adapter = monthAdapter
@@ -146,8 +130,8 @@ class MainActivity : AppCompatActivity() {
         spinnerDay.adapter = dayAdapter
 
         val calendar = Calendar.getInstance()
-        spinnerYear.setSelection(0) 
-        spinnerMonth.setSelection(calendar.get(Calendar.MONTH)) 
+        spinnerYear.setSelection(0)
+        spinnerMonth.setSelection(calendar.get(Calendar.MONTH))
         updateDaysSpinner(spinnerYear.selectedItem as Int, spinnerMonth.selectedItemPosition)
         spinnerDay.setSelection(calendar.get(Calendar.DAY_OF_MONTH) - 1) 
 
