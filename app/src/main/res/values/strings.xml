@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">TodoList</string>
+    <string name="hint_task_name">Enter task name</string>
+    <string name="hint_task_deadline">Enter deadline (e.g., YYYY-MM-DD)</string>
+    <string name="hint_duration_days">Duration (days)</string>
+    <string name="hint_description">Description (optional)</string>
+    <string name="button_add_task">Add Task</string>
+    <string name="checkbox_completed">Completed</string>
+    <string name="hint_task_name_dialog">Task Name</string>
+    <string name="hint_task_deadline_dialog">Deadline</string>
+    <string name="hint_duration_days_dialog">Duration (days)</string>
+    <string name="hint_description_dialog">Description</string>
+    <string name="dialog_edit_task_title">Edit Task</string>
+    <string name="button_update_task">Update</string>
+    <string name="button_delete_task">Delete</string>
+
+    <!-- Strings for deadline spinners -->
+    <string name="prompt_day">Select Day</string>
+    <string name="prompt_month">Select Month</string>
+    <string name="prompt_year">Select Year</string>
+
+    <!-- Strings for Task Detail Dialog -->
+    <string name="task_detail_title">Task Details</string>
+    <string name="label_task_name">Name:</string>
+    <string name="label_deadline">Deadline:</string>
+    <string name="label_duration">Duration (days):</string>
+    <string name="label_description">Description:</string>
+    <string name="label_status">Status:</string>
+    <string name="button_edit_task">Edit Task</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_pending">Pending</string>
+    <string name="delete_confirmation_title">Confirm Delete</string>
+    <string name="delete_confirmation_message">Are you sure you want to delete this task?</string>
+    <string name="confirm_yes">Yes</string>
+    <string name="confirm_no">No</string>
+
+    <!-- Labels for activity_main.xml input fields -->
+    <string name="label_task_name_main_input">Task Name:</string>
+    <string name="label_task_deadline_main_input">Deadline:</string>
+    <string name="label_task_duration_main_input">Duration (days):</string>
+    <string name="label_task_description_main_input">Description:</string>
+    <string name="hint_select_deadline">Click to select deadline</string>
+    <!-- <string name="label_deadline_input_area">Deadline:</string> --> <!-- Commented out as it might be redundant now -->
+
+    <!-- Labels for dialog_edit_task.xml -->
+    <string name="label_dialog_task_name">Task Name:</string>
+    <string name="label_dialog_deadline">Deadline:</string>
+    <string name="label_dialog_duration">Duration:</string>
+    <string name="label_dialog_description">Description:</string>
+
+    <!-- Strings for Task Detail Dialog -->
+    <string name="confirm_delete_title">Confirm Delete</string>
+    <string name="confirm_delete_message">Are you sure you want to delete this task?</string>
+    <string name="delete_button_text">Delete</string>
+    <string name="cancel_button_text">Cancel</string>
+
+</resources>

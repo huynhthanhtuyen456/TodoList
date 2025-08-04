@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Task Name (Label on Top) -->
+    <TextView
+        android:id="@+id/labelTaskNameMainInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_task_name_main_input"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editTextTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_task_name"
+        android:inputType="textCapSentences"
+        android:layout_below="@id/labelTaskNameMainInput"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/textViewDeadlineLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_deadline"
+        android:layout_below="@id/editTextTaskName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:labelFor="@id/linearLayoutDeadlineSpinners" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutDeadlineSpinners"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewDeadlineLabel"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp">
+
+        <Spinner
+            android:id="@+id/spinnerDay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:prompt="@string/prompt_day" />
+
+        <Spinner
+            android:id="@+id/spinnerMonth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:prompt="@string/prompt_month" />
+
+        <Spinner
+            android:id="@+id/spinnerYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:prompt="@string/prompt_year" />
+    </LinearLayout>
+
+    <!-- Task Duration (Label on Top) -->
+    <TextView
+        android:id="@+id/labelTaskDurationMainInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_task_duration_main_input"
+        android:layout_below="@id/linearLayoutDeadlineSpinners"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextTaskDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_duration_days_dialog"
+        android:inputType="number"
+        android:layout_below="@id/labelTaskDurationMainInput"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Task Description (Label on Top) -->
+    <TextView
+        android:id="@+id/labelTaskDescriptionMainInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_task_description_main_input"
+        android:layout_below="@id/editTextTaskDuration"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_description_dialog"
+        android:inputType="textMultiLine"
+        android:layout_below="@id/labelTaskDescriptionMainInput"
+        android:layout_marginTop="4dp"/>
+
+    <Button
+        android:id="@+id/buttonAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_task"
+        android:layout_below="@id/editTextTaskDescription"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+    <ListView
+        android:id="@+id/listViewTasks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buttonAddTask"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
